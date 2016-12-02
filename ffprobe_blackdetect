@@ -1,0 +1,1 @@
+ffprobe -f lavfi -i "input.mp4,blackdetect[out0]" -show_entries tags=lavfi.black_start,lavfi.black_end -of default=nw=1 -v quiet
