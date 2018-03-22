@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+  <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+  </head>
+  <body>
+    <div class="container">
+{% extends "layout.html" %}
+{% block content %}
+</table>
+
+<p><h3>List of Files</h3></p>
+<table border="1">
+  <tr>
+      <th>File ID</th>
+      <th>File Path</th>
+      <th>File Name</th>
+      <th>File Size</th>
+      <th>Process Time</th>
+      <th>File Created</th>
+      <th>File Modified</th>
+      <th>File Accessed</th>
+</tr>
+{% for post in posts %}
+<tr>
+    <td>{{post._id}}</td>
+    <td>{{post.file_path}}</td>
+    <td>{{post.file_name}}</td>
+    <td>{{post.file_size}}</td>
+    <td>{{post.process_datestamp}}</td>
+    <td>{{post.file_created}}</td>
+    <td>{{post.file_modified}}</td>
+    <td>{{post.file_accessed}}</td>>
+  </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}
+      </ul>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

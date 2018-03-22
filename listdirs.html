@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+   <style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+  </head>
+  <body>
+    <div class="container">
+{% extends "layout.html" %}
+{% block content %}
+</table>
+<p><h3>List of {{ size }} Directories {{dir}}</h3></p>
+<table border="1">
+  <tr>
+    <th>Storage Bucket</th>
+    <th>Dir Path</th>
+    <th>Is Symlink</th>
+    <th>Permissions</th>
+    <th>Dir Size</th>
+    <th>Process Time</th>
+      <th>Get Dir Files</th>
+</tr>
+{% for post in posts %}
+<tr>
+    <td>{{post.storage_bucket}}</td>
+    <td>{{post.dir_path}}</td>
+    <td>{{post.is_symlink}}</td>
+    <td>{{post.permission}}</td>
+    <td>{{post.dir_size}}</td>
+    <td>{{post.process_datestamp}}</td>>
+    <td><a href="/listfilesinpath{{post.dir_path}}">Get Files</a></td>
+  </tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}
+      </ul>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
